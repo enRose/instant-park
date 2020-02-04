@@ -62,11 +62,11 @@ const menuDataRender = (menuList: MenuDataItem[]): MenuDataItem[] =>
 
 const defaultFooterDom = (
   <DefaultFooter
-    copyright="2019 蚂蚁金服体验技术部出品"
+    copyright={'2019 ' + formatMessage({ id: 'layout.basic.footerCopyRight' })}
     links={[
       {
-        key: 'Ant Design Pro',
-        title: 'Ant Design Pro',
+        key: 'Barin Design',
+        title: 'Barin Design',
         href: 'https://pro.ant.design',
         blankTarget: true,
       },

@@ -9,6 +9,7 @@ import { ConnectProps, ConnectState } from '@/models/connect';
 import logo from '../assets/national-park.png';
 import styles from './UserLayout.less';
 import { FormattedMessage } from 'umi-plugin-react/locale';
+import { GithubOutlined } from '@ant-design/icons';
 
 export interface UserLayoutProps extends ConnectProps {
   breadcrumbNameMap: {
@@ -56,15 +57,28 @@ const UserLayout: React.FC<UserLayoutProps> = props => {
               </Link>
             </div>
             <div className={styles.desc}>
-              <FormattedMessage
-                id="layout.user.logoDesc"
-                // defaultMessage="Instant Park # find a car park any where any time"
-              />
+              <FormattedMessage id="layout.user.logoDesc" />
             </div>
           </div>
           {children}
         </div>
-        <DefaultFooter />
+        <DefaultFooter
+          copyright={'2020 ' + formatMessage({ id: 'layout.user.footerCopyRight' })}
+          links={[
+            {
+              key: 'github',
+              title: <GithubOutlined />,
+              href: 'https://github.com/enRose/instant-park',
+              blankTarget: true,
+            },
+            {
+              key: 'barin design',
+              title: '@' + formatMessage({ id: 'layout.user.footerCompanyName' }),
+              href: 'https://github.com/enRose',
+              blankTarget: true,
+            },
+          ]}
+        />
       </div>
     </>
   );

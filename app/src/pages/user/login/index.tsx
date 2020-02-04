@@ -8,6 +8,7 @@ import { StateType } from './model';
 import styles from './style.less';
 import { LoginParamsType } from './service';
 import LoginFrom from './components/Login';
+import { FormattedMessage, formatMessage } from 'umi-plugin-react/locale';
 
 const { Tab, UserName, Password, Mobile, Captcha, Submit } = LoginFrom;
 interface LoginProps {
@@ -48,28 +49,48 @@ const Login: React.FC<LoginProps> = props => {
   return (
     <div className={styles.main}>
       <LoginFrom activeKey={type} onTabChange={setType} onSubmit={handleSubmit}>
-        <Tab key="account" tab="账户密码登录">
+        <Tab
+          key="account"
+          tab={
+            <FormattedMessage
+              id="userandlogin.login.tab-login-credentials"
+              defaultMessage="Log in with credential"
+            />
+          }
+        >
           {status === 'error' && loginType === 'account' && !submitting && (
-            <LoginMessage content="账户或密码错误（admin/ant.design）" />
+            <LoginMessage
+              content={formatMessage({
+                id: 'userandlogin.login.message-invalid-credentials',
+              })}
+            />
           )}
 
           <UserName
             name="userName"
-            placeholder="用户名: admin or user"
+            placeholder={formatMessage({
+              id: 'userandlogin.login.userName',
+            })}
             rules={[
               {
                 required: true,
-                message: '请输入用户名!',
+                message: formatMessage({
+                  id: 'userandlogin.userName.required',
+                }),
               },
             ]}
           />
           <Password
             name="password"
-            placeholder="密码: ant.design"
+            placeholder={formatMessage({
+              id: 'userandlogin.login.password',
+            })}
             rules={[
               {
                 required: true,
-                message: '请输入密码！',
+                message: formatMessage({
+                  id: 'userandlogin.password.required',
+                }),
               },
             ]}
           />
