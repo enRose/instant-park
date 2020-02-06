@@ -122,6 +122,11 @@ export default {
               icon: 'dashboard',
               routes: [
                 {
+                  path: '/dashboard',
+                  redirect: '/dashboard/analysis',
+                  authority: ['admin', 'user'],
+                },
+                {
                   name: 'analysis',
                   icon: 'smile',
                   path: '/dashboard/analysis',
