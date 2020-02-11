@@ -79,6 +79,9 @@ export default {
       path: '/',
       component: '../layouts/BlankLayout',
       routes: [
+        { path: '/', component: './Home' },
+
+        // user
         {
           path: '/user',
           component: '../layouts/UserLayout',
@@ -110,8 +113,10 @@ export default {
             },
           ],
         },
+
+        // dashboard
         {
-          path: '/',
+          path: '/dashboard', //'/',
           component: '../layouts/BasicLayout',
           Routes: ['src/pages/Authorized'],
           authority: ['admin', 'user'],
