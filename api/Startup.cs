@@ -27,9 +27,13 @@ namespace Ami
         {
             // use sql server db in production and sqlite db in development
             if (_env.IsProduction())
+            {
                 services.AddDbContext<DataContext>();
+            }
             else
+            {
                 services.AddDbContext<DataContext, SqliteDataContext>();
+            }
 
             services.AddCors();
             services.AddControllers();
