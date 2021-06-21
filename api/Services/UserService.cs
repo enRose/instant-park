@@ -102,7 +102,6 @@ namespace Ami.Services
         }
 
         // helper methods
-
         private User getUser(int id)
         {
             var user = _context.Users.Find(id);

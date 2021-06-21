@@ -1,16 +1,19 @@
 ﻿<Properties StartupConfiguration="{3F937A9E-E204-45DB-A4DA-150FD3C9B28C}|Development">
   <MonoDevelop.Ide.ItemProperties.Ami PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/UsersController.cs">
     <Files>
-      <File FileName="Program.cs" Line="17" Column="46" />
-      <File FileName="Startup.cs" Line="54" Column="41" />
+      <File FileName="Services/UserService.cs" Line="104" Column="26" />
+      <File FileName="Controllers/UsersController.cs" Line="17" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Ami" expanded="True">
             <Node name="Ami" expanded="True">
-              <Node name="Startup.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="UsersController.cs" selected="True" />
+              </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
