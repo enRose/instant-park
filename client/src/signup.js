@@ -4,8 +4,6 @@ import { Formik } from 'formik'
 import { Form, Button, Container, Row, Col, InputGroup } from 'react-bootstrap'
 import * as yup from 'yup'
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
-
 const Signup = () => {
 	const [user, setUser] = useState({
 		firstName: '',
@@ -13,17 +11,32 @@ const Signup = () => {
 		email: '',
 		password: ''
 	})
-	
+
 	const schema = yup.object().shape({
 		firstName: yup.string()
-		.min(2, 'Too Short!')
-		.max(50, 'Too Long!')
-		.required('Required'),
+			.min(2, 'Too Short!')
+			.max(50, 'Too Long!')
+			.required('Required'),
 		lastName: yup.string().required('Required'),
 		email: yup.string().required('Required'),
 		password: yup.string().required('Required'),
 		terms: yup.bool().required().oneOf([true], 'Terms must be accepted'),
 	})
+
+	const register = async (user) => {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 
+					"Access-Control-Allow-Origin": "*",
+					'Content-Type': 'application/json' 
+				},
+        body: JSON.stringify(user)
+    }
+
+    const response = await fetch(`http://localhost:4000/users/register`, requestOptions)
+
+		return response.json()
+	}
 
 	return (
 		<Container fluid>
@@ -32,8 +45,8 @@ const Signup = () => {
 					<Formik
 						validationSchema={schema}
 						onSubmit={async (values) => {
-							await sleep(500)
-							alert(JSON.stringify(values, null, 2))
+							const response = await register(values)
+							console.log(JSON.stringify(response, null, 2))
 						}}
 						initialValues={{
 							firstName: '',

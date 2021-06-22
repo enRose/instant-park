@@ -62,8 +62,8 @@ namespace Ami.Services
         public void Register(RegisterRequest model)
         {
             // validate
-            if (_context.Users.Any(x => x.Username == model.Username))
-                throw new AppException("Username '" + model.Username + "' is already taken");
+            if (_context.Users.Any(x => x.Username == model.Email))
+                throw new AppException("Username '" + model.Email + "' is already taken");
 
             // map model to new user object
             var user = _mapper.Map<User>(model);
