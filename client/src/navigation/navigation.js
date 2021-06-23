@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Nav from 'react-bootstrap/Nav'
-import brain from './brain.svg'
+import lighting from './lighting.svg'
 import { Switch, Route, Link, NavLink } from 'react-router-dom'
 import NavItem from 'react-bootstrap/NavItem'
 import Signup from '../signup'
@@ -18,12 +18,12 @@ function Navigation() {
         <Navbar.Brand as={Link} to='/' href="#home">
           <img
             alt=""
-            src={brain}
+            src={lighting}
             width="30"
             height="30"
             className="d-inline-block align-top"
           />{' '}
-          remoteassembly
+          instant park
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
