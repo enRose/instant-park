@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { Formik } from 'formik'
 import { Form, Button, Container, Row, Col, InputGroup } from 'react-bootstrap'
 import * as yup from 'yup'
 
 const Signup = () => {
+	const history = useHistory()
+
 	const [user, setUser] = useState({
 		firstName: '',
 		lastName: '',
@@ -20,7 +22,6 @@ const Signup = () => {
 		lastName: yup.string().required('Required'),
 		email: yup.string().required('Required'),
 		password: yup.string().required('Required'),
-		terms: yup.bool().required().oneOf([true], 'Terms must be accepted'),
 	})
 
 	const register = async (user) => {
@@ -33,9 +34,7 @@ const Signup = () => {
         body: JSON.stringify(user)
     }
 
-    const response = await fetch(`http://localhost:4000/users/register`, requestOptions)
-
-		return response.json()
+    return await fetch(`http://localhost:4000/users/register`, requestOptions)
 	}
 
 	return (
@@ -46,7 +45,8 @@ const Signup = () => {
 						validationSchema={schema}
 						onSubmit={async (values) => {
 							const response = await register(values)
-							console.log(JSON.stringify(response, null, 2))
+							console.log(String.fromCodePoint(0x1F408), JSON.stringify(response, null, 2))
+							response.ok && history.push("/")
 						}}
 						initialValues={{
 							firstName: '',
@@ -124,17 +124,6 @@ const Signup = () => {
 									<Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback>
 								</Form.Group>
 
-								<Form.Group>
-									<Form.Check
-										required
-										name="terms"
-										label="Agree to terms and conditions"
-										onChange={handleChange}
-										isInvalid={!!errors.terms}
-										feedback={errors.terms}
-										id="validationFormikTerms"
-									/>
-								</Form.Group>
 								<Button type="submit" disabled={isSubmitting}>Sign up</Button>
 							</Form>
 						)}

@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{3F937A9E-E204-45DB-A4DA-150FD3C9B28C}|Development">
   <MonoDevelop.Ide.ItemProperties.Ami PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Users/RegisterRequest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/UsersController.cs">
     <Files>
-      <File FileName="Services/UserService.cs" Line="14" Column="30" />
-      <File FileName="Controllers/UsersController.cs" Line="40" Column="51" />
-      <File FileName="Program.cs" Line="18" Column="56" />
-      <File FileName="Models/Users/RegisterRequest.cs" Line="14" Column="27" />
+      <File FileName="Services/UserService.cs" Line="65" Column="66" />
+      <File FileName="Controllers/UsersController.cs" Line="43" Column="1" />
+      <File FileName="Program.cs" />
+      <File FileName="Models/Users/RegisterRequest.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Ami" expanded="True">
             <Node name="Ami" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="UsersController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True">
-                <Node name="Users" expanded="True">
-                  <Node name="RegisterRequest.cs" selected="True" />
-                </Node>
+                <Node name="Users" expanded="True" />
               </Node>
               <Node name="Services" expanded="True" />
             </Node>
@@ -28,9 +28,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/YiniY/Projects/rm/instant-park/api/Controllers/UsersController.cs" relfile="Controllers/UsersController.cs" line="43" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
